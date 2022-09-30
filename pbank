@@ -1,0 +1,45 @@
+package bank;
+import java.util.Scanner;
+public class Banksempurna {
+   public static void main(String[] args) {
+        int saldo = 100000;
+        int ambil = 0;
+        int pilihan = 0;
+        int lanjut =1;
+            Scanner masukan = new Scanner(System.in);
+            Scanner oke = new Scanner(System.in);
+            while (lanjut==1){
+                System.out.println("Selamat dantang di bank");
+                System.out.println("1.cek saldo\n2.simpan uang\n3.ambil uang");
+                System.out.println("masukkan pilihan :");
+                 pilihan += masukan.nextInt();
+                 if (pilihan == 1){
+                     System.out.println("saldo anda saat ini :"+saldo);
+                     pilihan-=1;
+                 }else if (pilihan == 2){
+                    System.out.println("masukkan jumlah uang : ");
+                    saldo += masukan.nextInt();
+                    System.out.println("Saldo anda saat ini :" + saldo);
+                    pilihan -=2;
+                 }else if (pilihan == 3){
+                    System.out.println("masukkan jumlah penarikan uang : ");
+                    ambil += masukan.nextInt();
+                    saldo -= ambil;
+                    if (saldo >0){
+                    System.out.println("Saldo anda Saat ini : " + saldo);
+                    } else {
+                        System.out.println("saldo tidak mencukupi");
+                        saldo +=ambil;
+                        ambil = 0;
+
+                    }
+                    pilihan-=3;
+                    }
+                    System.out.println("apakah ingin lanjut transaksi?");
+                    System.out.println("1.ya\n2.tidak");
+                    lanjut = oke.nextInt();
+              }
+            System.out.println("terimakasih sudah menggunakan layanan kami");
+            }
+    
+}
